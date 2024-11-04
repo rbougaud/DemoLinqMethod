@@ -5,66 +5,40 @@ namespace LinqMethod;
 
 public static class LinqMethods
 {
+    private static readonly Dictionary<LinqMethodType, Action> LinqMethodActions = new()
+    {
+        { LinqMethodType.Filtering, Filtering },
+        { LinqMethodType.Partitioning, Partitioning },
+        { LinqMethodType.Projection, Projection },
+        { LinqMethodType.ExistenceOrQuantityChecks, ExistenceOrQuantityChecks },
+        { LinqMethodType.SequenceManipulation, SequenceManipulation },
+        { LinqMethodType.AggregationMethod, AggregationMethod },
+        { LinqMethodType.ElementOperators, ElementOperators },
+        { LinqMethodType.ConversionMethods, ConversionMethods },
+        { LinqMethodType.GenerationMethods, GenerationMethods },
+        { LinqMethodType.SetOperations, SetOperations },
+        { LinqMethodType.JoiningAndGrouping, JoiningAndGrouping },
+        { LinqMethodType.Sorting, Sorting }
+    };
+
     public static void Show(LinqMethodType type)
     {
-        switch (type)
+        if (LinqMethodActions.TryGetValue(type, out var action))
         {
-            case LinqMethodType.Filtering:
-                Filtering();
-                break;
-            case LinqMethodType.Partitioning:
-                Partitioning();
-                break;
-            case LinqMethodType.Projection:
-                Projection();
-                break;
-            case LinqMethodType.ExistenceOrQuantityChecks:
-                ExistenceOrQuantityChecks();
-                break;
-            case LinqMethodType.SequenceManipulation:
-                SequenceManipulation();
-                break;
-            case LinqMethodType.AggregationMethod:
-                AggregationMethod();
-                break;
-            case LinqMethodType.ElementOperators:
-                ElementOperators();
-                break;
-            case LinqMethodType.ConversionMethods:
-                ConversionMethods();
-                break;
-            case LinqMethodType.GenerationMethods:
-                GenerationMethods();
-                break;
-            case LinqMethodType.SetOperations:
-                SetOperations();
-                break;
-            case LinqMethodType.JoiningAndGrouping:
-                JoiningAndGrouping();
-                break;
-            case LinqMethodType.Sorting:
-                Sorting();
-                break;
-            default:
-                ShowAll();
-                break;
+            action();
+        }
+        else
+        {
+            ShowAll();
         }
     }
 
     private static void ShowAll()
     {
-        Filtering();
-        Partitioning();
-        Projection();
-        ExistenceOrQuantityChecks();
-        SequenceManipulation();
-        AggregationMethod();
-        ElementOperators();
-        ConversionMethods();
-        GenerationMethods();
-        SetOperations();
-        JoiningAndGrouping();
-        Sorting();
+        foreach (var action in LinqMethodActions.Values)
+        {
+            action();
+        }
     }
 
     /// <summary>
