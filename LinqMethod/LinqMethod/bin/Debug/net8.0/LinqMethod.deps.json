@@ -1,0 +1,70 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "LinqMethod/1.0.0": {
+        "dependencies": {
+          "Dumpify": "0.6.6"
+        },
+        "runtime": {
+          "LinqMethod.dll": {}
+        }
+      },
+      "Dumpify/0.6.6": {
+        "dependencies": {
+          "Spectre.Console": "0.48.0"
+        },
+        "runtime": {
+          "lib/net8.0/Dumpify.dll": {
+            "assemblyVersion": "0.6.6.0",
+            "fileVersion": "0.6.6.0"
+          }
+        }
+      },
+      "Spectre.Console/0.48.0": {
+        "dependencies": {
+          "System.Memory": "4.5.5"
+        },
+        "runtime": {
+          "lib/net8.0/Spectre.Console.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.48.0.0"
+          }
+        }
+      },
+      "System.Memory/4.5.5": {}
+    }
+  },
+  "libraries": {
+    "LinqMethod/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Dumpify/0.6.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KDPmd681ltvJKRWRfbc7WLzOztYV8BXBSwoDaZVLlaq9Y45X3sZeh8FDF2MyfTErcKVp4fPEWyDiKyizInCptg==",
+      "path": "dumpify/0.6.6",
+      "hashPath": "dumpify.0.6.6.nupkg.sha512"
+    },
+    "Spectre.Console/0.48.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4Mc1UT7Azgtyb8FyNwK5FZmoZbKuT5PmY7ZwaKUytjD5kGFMNBACpOZTwYtkuY377YkYtZYBeDDTJUwTW86QXw==",
+      "path": "spectre.console/0.48.0",
+      "hashPath": "spectre.console.0.48.0.nupkg.sha512"
+    },
+    "System.Memory/4.5.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XIWiDvKPXaTveaB7HVganDlOCRoj03l+jrwNvcge/t8vhGYKvqV+dMv6G4SAX2NoNmN0wZfVPTAlFwZcZvVOUw==",
+      "path": "system.memory/4.5.5",
+      "hashPath": "system.memory.4.5.5.nupkg.sha512"
+    }
+  }
+}
